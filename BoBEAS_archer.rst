@@ -20,3 +20,6 @@ Run master script::
 
   cd BoBEAS/SCRIPTS
   . main1.sh
+
+
+  **MAYBE TRY PUTTING THIS AS A REPO WiKI INSTEAD***
