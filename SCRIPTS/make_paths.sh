@@ -16,3 +16,4 @@ export ARCH=$GFILE/ARCH
 export XIOS_DIR=$WORK/xios-2.0_r1242
 export BATHY=global_merged2.nc
 export ARCH1=$WORK/ARCH
+export GITCLONE=$WORK/BoBEAS
