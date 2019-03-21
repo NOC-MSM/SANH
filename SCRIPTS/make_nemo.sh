@@ -10,7 +10,7 @@ printf 'y\nn\nn\nn\nn\nn\nn\nn\n' | ./makenemo -n $CONFIG -m XC_ARCHER_INTEL -j 
 
 
 cp $GITCLONE/MY_SRC/* $CDIR/$CONFIG/MY_SRC/.
-cp $GITCLONE/cpp_$CONFIG.fcm $CONFIG/cpp_$CONFIG.fcm
+cp $GITCLONE/cpp_file.fcm $CONFIG/cpp_$CONFIG.fcm
 
 ./makenemo -n $CONFIG -m XC_ARCHER_INTEL -j 10
 
