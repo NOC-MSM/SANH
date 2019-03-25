@@ -1,5 +1,6 @@
 export CONFIG=INDIAN_OCEAN_AUTO
 export WORK=/work/n01/n01/$USER
+export AWORK=/work/n01/n01/ashbre
 export WDIR=$WORK/$CONFIG
 export NEMO=$WORK/NEMO/
 export DOMAIN=$WDIR/DOMAIN
@@ -11,7 +12,7 @@ export CDIR=$NEMO/trunk_NEMOGCM_r8395/CONFIG
 export TDIR=$NEMO/trunk_NEMOGCM_r8395/TOOLS
 export RUND=$WDIR/RUN_DIRECTORY/
 export EXP=$RUND/$CONFIG
-export GFILE=$WORK/GENERIC_NEMO_FILES
+export GFILE=$AWORK/GENERIC_NEMO_FILES
 export ARCH=$GFILE/ARCH
 export XIOS_DIR=$WORK/xios-2.0_r1242
 export BATHY=global_merged2.nc
