@@ -27,7 +27,9 @@ git checkout Generalise-tide-input
 
 python setup.py build
 export PYTHONPATH=~/.conda/envs/nrct_tide/lib/python2.7/site-packages/:$PYTHONPATH
+#export PYTHONPATH=/work/n01/n01/jelt/jelt-conda/envs/nrct_tide/lib/python2.7/site-packages/:$PYTHONPATH
 
 python setup.py install --prefix ~/.conda/envs/nrct_tide
+#python setup.py install --prefix /work/n01/n01/jelt/jelt-conda/envs/nrct_tide
 
 cd $WDIR
