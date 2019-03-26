@@ -6,6 +6,10 @@ facilitate configuration archival and sharing:
 
 <pre>
 BoBEAS
+|____NAMELISTS_AND_FORTRAN_FILES
+| |----namelist_cfg
+| |----namelist_ref
+|
 |____SCRIPTS
 | |----main1.sh
 | |----make_paths.sh
