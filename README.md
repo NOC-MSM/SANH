@@ -57,7 +57,6 @@ BoBEAS
 | |____python_tide.sh
 | |____scri.sh
 | |____setup_python_obc.sh
-| |____setup_python_tide.sh~
 | |____setup_python_tide.sh
 | |____interpolate_gebco.sh
 | |____make_domain_cfg.sh
