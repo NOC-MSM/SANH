@@ -78,6 +78,9 @@ BoBEAS
 | |____river_maker.m
 | |____Coast_finder.m
 | |____smooth2.m
+| |____bathymetry_fill.m
+| |____Generate_NEMO_Forcing.py
+| |____python_mask.py
 |
 |____README.md
 </pre>
