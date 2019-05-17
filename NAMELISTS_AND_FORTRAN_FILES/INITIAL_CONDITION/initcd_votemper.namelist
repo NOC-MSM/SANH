@@ -156,8 +156,8 @@ ismooth   = 0
 &n3d
 cf_z_in  = 'initcd_votemper.nc'
 cv_z_in  = 'gdept'
-cf_z_out = 'initcd_votemper.nc'
-cv_z_out = 'gdept'
+cf_z_out = 'domain_cfg.nc'
+cv_z_out = 'nav_lev'
 cv_z_out_name = 'gdept'
 ctype_z_in = 'z'
 ctype_z_out = 'z'
