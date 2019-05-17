@@ -244,7 +244,6 @@
    sn_prec=          'ERA5_TP',                         1,            'TP',        .true.,    .false.,   'yearly',    'weights_era5_INDIAN_bicubic.nc',    '',       'ERA5_LSM'
    sn_qlw =          'ERA5_STRD',                       1,            'STRD',      .true.,    .false.,   'yearly',    'weights_era5_INDIAN_bicubic.nc',    '',       'ERA5_LSM'
    sn_qsr=           'ERA5_SSRD',                       1,            'SSRD',      .true.,    .false.,   'yearly',    'weights_era5_INDIAN_bicubic.nc',    '',       'ERA5_LSM'
-   sn_qsr=           'ERA5_SF',                       1,            'SF',      .true.,    .false.,   'yearly',    'weights_era5_INDIAN_bicubic.nc',    '',       'ERA5_LSM' 
    sn_snow=          'ERA5_SF',                          1,            'SF',        .true.,    .false.,   'yearly',    'weights_era5_INDIAN_bicubic.nc',    '',       'ERA5_LSM'
    sn_tair=          'ERA5_T2M',                         1,            'T2M',       .true.,    .false.,   'yearly',    'weights_era5_INDIAN_bicubic.nc',    '',       'ERA5_LSM'
    sn_wndi=          'ERA5_U10',                        1,            'U10',       .true.,    .false.,   'yearly',    'weights_era5_INDIAN_bicubic.nc',    'Uwnd',       'ERA5_LSM'
@@ -348,14 +347,14 @@
 !-----------------------------------------------------------------------
 !              !  file name           ! frequency (hours) ! variable  ! time interp. !  clim  ! 'yearly'/ ! weights  ! rotation ! land/sea mask !
 !              !                      !  (if <0  months)  !   name    !   (logical)  !  (T/F) ! 'monthly' ! filename ! pairing  ! filename      !
-   sn_rnf      = 'runoff_core_monthly',        -1         , 'sorunoff',   .true.     , .true. , 'yearly'  , ''       , ''       , ''
-   sn_cnf      = 'runoff_core_monthly',         0         , 'socoefr0',   .false.    , .true. , 'yearly'  , ''       , ''       , ''
+   sn_rnf      = 'river_test'         ,        -1         , 'rorunoff',   .true.     , .true. , 'yearly'  , ''       , ''       , ''
+   sn_cnf      = 'river_test'         ,         0         , 'socoefr0',   .false.    , .true. , 'yearly'  , ''       , ''       , ''
    sn_s_rnf    = 'runoffs'            ,        24         , 'rosaline',   .true.     , .true. , 'yearly'  , ''       , ''       , ''
    sn_t_rnf    = 'runoffs'            ,        24         , 'rotemper',   .true.     , .true. , 'yearly'  , ''       , ''       , ''
    sn_dep_rnf  = 'runoffs'            ,         0         , 'rodepth' ,   .false.    , .true. , 'yearly'  , ''       , ''       , ''
 
    cn_dir      = './'      !  root directory for the location of the runoff files
-   ln_rnf_mouth= .true.    !  specific treatment at rivers mouths
+   ln_rnf_mouth= .false.    !  specific treatment at rivers mouths
       rn_hrnf     =  15.e0    !  depth over which enhanced vertical mixing is used    (ln_rnf_mouth=T)
       rn_avt_rnf  =   1.e-3   !  value of the additional vertical mixing coef. [m2/s] (ln_rnf_mouth=T)
    rn_rfact    =   1.e0    !  multiplicative factor for runoff

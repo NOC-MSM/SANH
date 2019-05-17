@@ -5,26 +5,26 @@
 &namrun        !   parameters of the run
 !-----------------------------------------------------------------------
    cn_exp      =  "INDIAN"  !  experience name
-   nn_it000    =  1  !43201 !  first time step
-   nn_itend    =  3000 !2881 !43679 !86400   !  last  time step (std 1 day = 144) (for dt = 6 min, so 240*dt = 1 day)
+   nn_it000    =  57601  !  first time step ! CHNAGE THIS TO END OF LAST RUN + 1
+   nn_itend    = 138240 !  last  time step (std 1 day = 144) (for dt = 6 min, so 240*dt = 1 day) ! CHANGE THIS TO THIS + 56 DAYS
    nn_date0    =  20160101  !20110717 !  date at nit_0000 (format yyyymmdd) used if ln_rstart=F or (ln_rstart=T and nn_rstctl=0 or 1)
    nn_time0    =       0   !  initial time of day in hhmm
    nn_leapy    =       1   !  Leap year calendar (1) or not (0)
-   ln_rstart   =  .false.  !  start from rest (F) or from a restart file (T)
+   ln_rstart   =  .true.  !  start from rest (F) or from a restart file (T)
       nn_euler    =    1            !  = 0 : start with forward time step if ln_rstart=T
       nn_rstctl   =    2            !  restart control ==> activated only if ln_rstart=T
       !                             !    = 0 nn_date0 read in namelist ; nn_it000 : read in namelist
       !                             !    = 1 nn_date0 read in namelist ; nn_it000 : check consistancy between namelist and restart
       !                             !    = 2 nn_date0 read in restart  ; nn_it000 : check consistancy between namelist and restart
-      cn_ocerst_in    = "AMMSURGE_00043679_restart"   !  suffix of ocean restart name (input)
-      cn_ocerst_indir = "./restart_file_nonCyclone_season"         !  directory from which to read input ocean restarts
+      cn_ocerst_in    = "INDIAN_00057600_restart"   !  suffix of ocean restart name (input) ! CHANGE THIS TO LAST RESTART FILE NUMBER
+      cn_ocerst_indir = "./restarts"         !  directory from which to read input ocean restarts
       cn_ocerst_out   = "restart"   !  suffix of ocean restart name (output)
       cn_ocerst_outdir= "./restarts"         !  directory in which to write output ocean restarts
 !   nn_euler    =       1   !  = 0 : start with forward time step if ln_rstart=.true.
 !   cn_ocerst_in   = "ammsurge_restart_oce"   !  suffix of ocean restart name (input)
 !   cn_ocerst_out  = "restart_oce_out"   !  suffix of ocean restart name (input)
    nn_istate   =       0   !  output the initial state (1) or not (0)
-   nn_stock    =  44160 ! 86400    !  frequency of creation of a restart file (modulo referenced to 1)
+   nn_stock    =  40320 ! frequency of creation of a restart file (modulo referenced to 1) ! 28 DAYS
    nn_write    =  10 ! 86400    !  frequency of write in the output file   (modulo referenced to nit000) 
 /
 !-----------------------------------------------------------------------
@@ -70,7 +70,7 @@
    ln_blk =  .true.
    ln_apr_dyn  = .false.    !  Patm gradient added in ocean & ice Eqs.   (T => fill namsbc_apr )
    nn_ice      = 0         !  =0 no ice boundary condition   ,
-   ln_rnf      = .false.   !  Runoffs                                   (T => fill namsbc_rnf) 
+   ln_rnf      = .true.   !  Runoffs                                   (T => fill namsbc_rnf) 
    ln_ssr      = .false.   !  Sea Surface Restoring on T and/or S       (T => fill namsbc_ssr)
    ln_traqsr   = .false.   !  Light penetration in the ocean            (T => fill namtra_qsr)
    nn_fwb      = 0         !  FreshWater Budget: =0 unchecked
@@ -163,28 +163,35 @@
    ln_bdy     = .true.
    nb_bdy         = 1                    !  number of open boundary sets
    cn_coords_file = 'coordinates.bdy.nc' !  bdy coordinates files
-   cn_dyn2d       = 'flather'            !
-   nn_dyn2d_dta   =  2                   !  = 0, bdy data are equal to the initial state
+   cn_dyn2d       = 'flather'            ! was flather
+   nn_dyn2d_dta   =  3                   !  = 0, bdy data are equal to the initial state
                                          !  = 1, bdy data are read in 'bdydata   .nc' files
                                          !  = 2, use tidal harmonic forcing data from files
                                          !  = 3, use external data AND tidal harmonic forcing
-   cn_tra        =  'frs'                ! 
-   nn_tra_dta    =  0                    !  = 0, bdy data are equal to the initial state
+
+    cn_dyn3d      =  'frs'               !
+    nn_dyn3d_dta  =  1                   !  = 0, bdy data are equal to the initial state
                                          !  = 1, bdy data are read in 'bdydata   .nc' files
-   nn_rimwidth   = 1                    !  width of the relaxation zone
+
+
+   cn_tra        =  'frs'                ! 'frs'
+   nn_tra_dta    =  1                    !  = 0, bdy data are equal to the initial state
+                                         !  = 1, bdy data are read in 'bdydata   .nc' files
+   nn_rimwidth   = 1                     !  width of the relaxation zone
+   ln_tra_dmp    = .false.
 /
 !-----------------------------------------------------------------------
 &nambdy_dta      !  open boundaries - external data
 !-----------------------------------------------------------------------
 !              !  file name      ! frequency (hours) ! variable  ! time interp.!  clim   ! 'yearly'/ ! weights  ! rotation ! land/sea mask !
 !              !                 !  (if <0  months)  !   name    !  (logical)  !  (T/F ) ! 'monthly' ! filename ! pairing  ! filename      !
-   bn_ssh      = 'INDIAN_bt_bdyT', 24      , 'sossheig',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_u2d      = 'INDIAN_bdyU',  24        , 'vobtcrtx',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_v2d      = 'INDIAN_bdyV',  24        , 'vobtcrty',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_u3d      = 'INDIAN_bdyU'   24        , 'vozocrtx',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_v3d      = 'INDIAN_bdyV'   24        , 'vomecrty',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_tem      = 'INDIAN_bdyT'   24        , 'votemper',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_sal      = 'INDIAN_bdyT'   24        , 'vosaline',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
+   bn_ssh      = 'INDIAN_bdy_SSH' ,    24        , 'sossheig',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
+   bn_u2d      = 'INDIAN_bdy_U'    ,    24        , 'vobtcrtx',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
+   bn_v2d      = 'INDIAN_bdy_V'    ,    24        , 'vobtcrty',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
+   bn_u3d      = 'INDIAN_bdy_U'    ,    24        , 'vozocrtx',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
+   bn_v3d      = 'INDIAN_bdy_V'    ,    24        , 'vomecrty',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
+   bn_tem      = 'INDIAN_bdy_TEMP',    24        , 'votemper',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
+   bn_sal      = 'INDIAN_bdy_SAL' ,    24        , 'vosaline',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
 /
 !-----------------------------------------------------------------------
 &nambdy_tide     ! tidal forcing at open boundaries
