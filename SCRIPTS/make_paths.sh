@@ -1,4 +1,4 @@
-export CONFIG=INDIAN_OCEAN_AUTO
+export CONFIG=BoBEAS
 export WORK=/work/n01/n01/$USER
 export AWORK=/work/n01/n01/ashbre
 export WDIR=$WORK/$CONFIG
