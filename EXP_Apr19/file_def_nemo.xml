@@ -12,10 +12,12 @@
     
       <file_group id="1ts" output_freq="1ts"  output_level="10" enabled=".TRUE."/> <!-- 1 time step files -->
 
-      <file_group id="1h" output_freq="1h"  output_level="10" enabled=".TRUE."> <!-- 1h files -->
+      <file_group id="1ts" output_freq="1ts"  output_level="10" enabled=".TRUE."> <!-- 1h files -->
   	<file id="file19" name_suffix="_SSH" description="ocean T grid variables" >
     	 <field field_ref="ssh"          name="zos"   />
          <field field_ref="sst"          name="tos"   />
+         <field field_ref="ssu"          name="uos"  grid_ref="grid_U_2D" />
+         <field field_ref="ssv"          name="vos"  grid_ref="grid_V_2D" />
   	</file>
       </file_group>
 
