@@ -930,7 +930,7 @@ ln_rnf_depth_ini = .true.    !  compute depth at initialisation from runoff file
    rn_avt0     =   1.2e-5  !  vertical eddy diffusivity [m2/s]          (background Kz if not "key_zdfcst")
    nn_avb      =    0      !  profile for background avt & avm (=1) or not (=0)
    nn_havtb    =    0      !  horizontal shape for avtb (=1) or not (=0)
-   ln_zdfevd   = .true.    !  enhanced vertical diffusion (evd) (T) or not (F)
+   ln_zdfevd   = .false.    !  enhanced vertical diffusion (evd) (T) or not (F)
       nn_evdm     =    0        ! evd apply on tracer (=0) or on tracer and momentum (=1)
       rn_avevd    =  100.       !  evd mixing coefficient [m2/s]
    ln_zdfnpc   = .true.   !  Non-Penetrative Convective algorithm (T) or not (F)
