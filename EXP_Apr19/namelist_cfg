@@ -26,27 +26,27 @@
 &namrun        !   parameters of the run
 !-----------------------------------------------------------------------
    cn_exp      =    "BoBEAS"  !  experience name
-   nn_it000    =  1 !  first time step
-   nn_itend    =  100 ! 10800! 259200!133920! 10800!43200 ! 10day=14400   !  last  time step (std 5475)
+   nn_it000    =  101 !  first time step
+   nn_itend    =  1440 ! 10800! 259200!133920! 10800!43200 ! 10day=14400   !  last  time step (std 5475)
    nn_date0    =  20190401   !  date at nit_0000 (format yyyymmdd) used if ln_rstart=F or (ln_rstart=T and nn_rstctl=0 or 1)
    nn_time0    =       0   !  initial time of day in hhmm
    nn_leapy    =       1   !  Leap year calendar (1) or not (0)
-   ln_rstart   = .false.   !  start from rest (F) or from a restart file (T)
+   ln_rstart   = .true.   !  start from rest (F) or from a restart file (T)
        nn_euler    =  1            !  = 0 : start with forward time step if ln_rstart=T
        nn_rstctl   =  2             !  restart control ==> activated only if ln_rstart=T
       !                             !    = 0 nn_date0 read in namelist ; nn_it000 : read in namelist
       !                             !    = 1 nn_date0 read in namelist ; nn_it000 : check consistancy between namelist and restart
       !                             !    = 2 nn_date0 read in restart  ; nn_it000 : check consistancy between namelist and restart
-      cn_ocerst_in    = "__RESFILE__"   !  suffix of ocean restart name (input)
+      cn_ocerst_in    = "BoBEAS_00000100_restart"   !  suffix of ocean restart name (input)
       cn_ocerst_indir = "./restarts"         !  directory from which to read input ocean restarts
       cn_ocerst_out   = "restart"   !  suffix of ocean restart name (output)
       cn_ocerst_outdir= "./restarts"         !  directory in which to write output ocean restarts
    ln_iscpl    = .false.   !  cavity evolution forcing or coupling to ice sheet model
    nn_istate   =       1   !  output the initial state (1) or not (0)
    ln_rst_list = .false.   !  output restarts at list of times using nn_stocklist (T) or at set frequency with nn_stock (F)
-   nn_stock    =   10 !43200 ! 14400   !  frequency of creation of a restart file (modulo referenced to 1)
+   nn_stock    =   144 !43200 ! 14400   !  frequency of creation of a restart file (modulo referenced to 1)
    nn_stocklist = 0,0,0,0,0,0,0,0,0,0 ! List of timesteps when a restart file is to be written
-   nn_write    =   10 ! 14400   !  frequency of write in the output file   (modulo referenced to nn_it000)
+   nn_write    =   144 ! 14400   !  frequency of write in the output file   (modulo referenced to nn_it000)
    ln_mskland  = .false.   !  mask land points in NetCDF outputs (costly: + ~15%)
    ln_cfmeta   = .false.   !  output additional data to netCDF files required for compliance with the CF metadata standard
    ln_clobber  = .true.    !  clobber (overwrite) an existing file
@@ -930,10 +930,10 @@ ln_rnf_depth_ini = .true.    !  compute depth at initialisation from runoff file
    rn_avt0     =   1.2e-5  !  vertical eddy diffusivity [m2/s]          (background Kz if not "key_zdfcst")
    nn_avb      =    0      !  profile for background avt & avm (=1) or not (=0)
    nn_havtb    =    0      !  horizontal shape for avtb (=1) or not (=0)
-   ln_zdfevd   = .false.    !  enhanced vertical diffusion (evd) (T) or not (F)
+   ln_zdfevd   = .true.    !  enhanced vertical diffusion (evd) (T) or not (F)
       nn_evdm     =    0        ! evd apply on tracer (=0) or on tracer and momentum (=1)
       rn_avevd    =  100.       !  evd mixing coefficient [m2/s]
-   ln_zdfnpc   = .true.   !  Non-Penetrative Convective algorithm (T) or not (F)
+   ln_zdfnpc   = .false.   !  Non-Penetrative Convective algorithm (T) or not (F)
       nn_npc      =    1        ! frequency of application of npc
       nn_npcp     =  365        ! npc control print frequency
    ln_zdfexp   = .false.   !  time-stepping: split-explicit (T) or implicit (F) time stepping
