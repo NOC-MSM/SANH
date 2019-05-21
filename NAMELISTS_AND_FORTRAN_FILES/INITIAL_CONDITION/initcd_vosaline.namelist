@@ -99,16 +99,16 @@
 &ninput
 ivect     = 0
 lregin    = T
-cf_in     = './initcd_vosaline.nc'
+cf_in     = './initcd_origz_vosaline.nc'
 cv_in     = 'vosaline'
 cv_t_in   = 'time_counter'
 jt1       = 0
 jt2       = 0
 jplev     = 0
-cf_x_in   = './initcd_vosaline.nc'
+cf_x_in   = './initcd_origz_vosaline.nc'
 cv_lon_in = 'x'
 cv_lat_in = 'y'
-cf_lsm_in = 'sosie_initcd_mask.nc'
+cf_lsm_in = 'initcd_origz_mask.nc'
 cv_lsm_in = 'mask'
 ldrown    = T
 ewper     = -1
@@ -154,10 +154,10 @@ ismooth   = 0
 !! ssig_out     : structure with ROMS s-coordinates parameters on output grid (see above)
 !!
 &n3d
-cf_z_in  = 'initcd_vosaline.nc'
+cf_z_in  = 'initcd_origz_vosaline.nc'
 cv_z_in  = 'gdept'
-cf_z_out = 'initcd_vosaline.nc'
-cv_z_out = 'gdept'
+cf_z_out = 'domain_cfg.nc'
+cv_z_out = 'nav_lev'
 cv_z_out_name = 'gdept'
 ctype_z_in = 'z'
 ctype_z_out = 'z'
@@ -216,7 +216,7 @@ ctype_z_out = 'z'
 !!
 &nhtarget
 lregout    = F
-cf_x_out   = 'initcd_vosaline.nc'
+cf_x_out   = 'initcd_origz_vosaline.nc'
 cv_lon_out = 'x'
 cv_lat_out = 'y'
 cf_lsm_out = ''

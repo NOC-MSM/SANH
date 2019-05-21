@@ -72,7 +72,7 @@
 /
 
 &interp_outputs
-    output_file = "initcd_votemper.nc"
+    output_file = "initcd_origz_votemper.nc"
     output_mode = "create"
     output_dims = 'x', 'y', 'z', 'time_counter'
     output_scaling = "votemper|1.0"
