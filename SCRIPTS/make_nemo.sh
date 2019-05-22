@@ -1,7 +1,7 @@
 svn co http://forge.ipsl.jussieu.fr/nemo/svn/trunk/NEMOGCM@8395 $NEMO/trunk_NEMOGCM_r8395
 
-#cp $GITCLONE/ARCH/arch-XC_ARCHER_INTEL.fcm $CDIR/../ARCH/
-cp $ARCH/arch-XC_ARCHER_INTEL.fcm $CDIR/../ARCH/
+cp $GITCLONE/ARCH/arch-XC_ARCHER_INTEL.fcm $CDIR/../ARCH/
+#cp $ARCH/arch-XC_ARCHER_INTEL.fcm $CDIR/../ARCH/
 
 cd $CDIR
 
@@ -10,10 +10,10 @@ printf 'y\nn\nn\nn\nn\nn\nn\nn\n' | ./makenemo -n $CONFIG -m XC_ARCHER_INTEL -j 
 ./makenemo -n $CONFIG -m XC_ARCHER_INTEL -j 10 clean
 
 
-#cp $GITCLONE/MY_SRC/* $CDIR/$CONFIG/MY_SRC/.
-cp $GFILE/f_files/* $CDIR/$CONFIG/MY_SRC/.
-#cp $GITCLONE/cpp_file.fcm $CONFIG/cpp_$CONFIG.fcm
-cp $GFILE/cpp_file.fcm $CONFIG/cpp_$CONFIG.fcm
+cp $GITCLONE/MY_SRC/* $CDIR/$CONFIG/MY_SRC/.
+#cp $GFILE/f_files/* $CDIR/$CONFIG/MY_SRC/.
+cp $GITCLONE/cpp_file.fcm $CONFIG/cpp_$CONFIG.fcm
+#cp $GFILE/cpp_file.fcm $CONFIG/cpp_$CONFIG.fcm
 
 ./makenemo -n $CONFIG -m XC_ARCHER_INTEL -j 10
 
