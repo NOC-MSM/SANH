@@ -616,13 +616,13 @@ ln_rnf_depth_ini = .true.    !  compute depth at initialisation from runoff file
 !-----------------------------------------------------------------------
 !              !  file name      ! frequency (hours) ! variable  ! time interp.!  clim   ! 'yearly'/ ! weights  ! rotation ! land/sea mask !
 !              !                 !  (if <0  months)  !   name    !  (logical)  !  (T/F ) ! 'monthly' ! filename ! pairing  ! filename      !
-   bn_ssh      = 'BoBEAS_bt_bdyT',24       , 'sossheig',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_u2d      = 'BoBEAS_bdyU',   24        , 'vobtcrtx',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_v2d      = 'BoBEAS_bdyV',   24        , 'vobtcrty',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_u3d      = 'BoBEAS_bdyU'    24        , 'vozocrtx',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_v3d      = 'BoBEAS_bdyV'    24        , 'vomecrty',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_tem      = 'BoBEAS_bdyT'    24        , 'votemper',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_sal      = 'BoBEAS_bdyT'    24        , 'vosaline',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
+   bn_ssh      = 'BoBEAS_bt_bdyT', 24        , 'sossheig',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
+   bn_u2d      = 'BoBEAS_bdyU',    24        , 'vobtcrtx',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
+   bn_v2d      = 'BoBEAS_bdyV',    24        , 'vobtcrty',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
+   bn_u3d      = 'BoBEAS_bdyU',    24        , 'vozocrtx',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
+   bn_v3d      = 'BoBEAS_bdyV',    24        , 'vomecrty',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
+   bn_tem      = 'BoBEAS_bdyT',    24        , 'votemper',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
+   bn_sal      = 'BoBEAS_bdyT',    24        , 'vosaline',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
 ! for lim2
 !   bn_frld    = 'amm12_bdyT_ice',         24        , 'ileadfra',    .true.   , .false. ,  'daily'  ,    ''    ,   ''     ,     ''
 !   bn_hicif   = 'amm12_bdyT_ice',         24        , 'iicethic',    .true.   , .false. ,  'daily'  ,    ''    ,   ''     ,     ''
