@@ -99,10 +99,8 @@
 !-----------------------------------------------------------------------
 !              !  file name                 ! frequency (hours) ! variable ! time interp.!  clim  ! 'yearly'/ ! weights  ! rotation ! land/sea mask !
 !              !                            !  (if <0  months)  !   name   !  (logical)  !  (T/F) ! 'monthly' ! filename ! pairing  ! filename      !
-   sn_tem = './ICS/initcd_votemper.nc',      -1      ,'votemper',   .false.    , .true. , 'yearly'  ,    ''    ,    ''    ,    ''
-   sn_sal = './ICS/initcd_vosaline.nc',      -1      ,'vosaline',   .false.    , .true. , 'yearly'  ,    ''    ,    ''    ,    ''
-
-
+   sn_tem = 'data_1m_potential_temperature_nomask',     -1      ,'votemper',   .true.    , .true. , 'yearly'  ,    ''    ,    ''    ,    ''
+   sn_sal = 'data_1m_salinity_nomask'             ,     -1      ,'vosaline',   .true.    , .true. , 'yearly'  ,    ''    ,    ''    ,    ''
    !
    cn_dir      = './'      !  root directory for the location of the runoff files
    ln_tsd_init = .true.    !  Initialisation of ocean T & S with T & S input data (T) or not (F)
@@ -205,7 +203,7 @@
                            !  =1 levitating ice with mass and salt exchange but no presure effect
                            !  =2 embedded sea-ice (full salt and mass exchanges and pressure)
                      ! Misc. options of sbc : 
-   ln_traqsr   = .false.    !  Light penetration in the ocean            (T => fill namtra_qsr)
+   ln_traqsr   = .true.    !  Light penetration in the ocean            (T => fill namtra_qsr)
    ln_dm2dc    = .false.   !  daily mean to diurnal cycle on short wave
    ln_rnf      = .true.    !  runoffs                                   (T => fill namsbc_rnf)
    ln_ssr      = .true.    !  Sea Surface Restoring on T and/or S       (T => fill namsbc_ssr)
@@ -219,7 +217,7 @@
    ln_sdw      = .false.   !  Read 2D Surf Stokes Drift & Computation of 3D stokes drift (T => ln_wave=.true. & fill namsbc_wave) 
    ln_tauoc    = .false.   !  Activate ocean stress modified by external wave induced stress (T => ln_wave=.true. & fill namsbc_wave)
    ln_stcor    = .false.   !  Activate Stokes Coriolis term (T => ln_wave=.true. & ln_sdw=.true. & fill namsbc_wave)
-   nn_lsm      = 1         !  =0 land/sea mask for input fields is not applied (keep empty land/sea mask filename field) ,
+   nn_lsm      = 0         !  =0 land/sea mask for input fields is not applied (keep empty land/sea mask filename field) ,
                            !  =1:n number of iterations of land/sea mask application for input fields (fill land/sea mask filename field)
 /
 !-----------------------------------------------------------------------
@@ -233,36 +231,36 @@
    sn_qsr      = 'qsr'       ,        24         , 'qsr'     , .false.      , .false., 'yearly'  , ''       , ''       , ''
    sn_emp      = 'emp'       ,        24         , 'emp'     , .false.      , .false., 'yearly'  , ''       , ''       , ''
 
-   cn_dir      = './fluxes/'      !  root directory for the location of the flux files
+   cn_dir      = './'      !  root directory for the location of the flux files
 /
 !-----------------------------------------------------------------------
 &namsbc_blk   !   namsbc_blk  generic Bulk formula                      (ln_blk = T)
 !-----------------------------------------------------------------------
 !              !  file name                   ! frequency (hours) ! variable  ! time interp. !  clim  ! 'yearly'/ ! weights                              ! rotation ! land/sea mask !
 !              !                              !  (if <0  months)  !   name    !   (logical)  !  (T/F) ! 'monthly' ! filename                             ! pairing  ! filename      !
-   sn_humi=          'ERA5_SPH',                        1,            'SPH',       .true.,    .false.,   'yearly',    'weights_era5_INDIAN_bicubic.nc',    '',       'ERA5_LSM' 
-   sn_prec=          'ERA5_TP',                         1,            'TP',        .true.,    .false.,   'yearly',    'weights_era5_INDIAN_bicubic.nc',    '',       'ERA5_LSM'
-   sn_qlw =          'ERA5_STRD',                       1,            'STRD',      .true.,    .false.,   'yearly',    'weights_era5_INDIAN_bicubic.nc',    '',       'ERA5_LSM'
-   sn_qsr=           'ERA5_SSRD',                       1,            'SSRD',      .true.,    .false.,   'yearly',    'weights_era5_INDIAN_bicubic.nc',    '',       'ERA5_LSM'
-   sn_snow=          'ERA5_SF',                          1,            'SF',        .true.,    .false.,   'yearly',    'weights_era5_INDIAN_bicubic.nc',    '',       'ERA5_LSM'
-   sn_tair=          'ERA5_T2M',                         1,            'T2M',       .true.,    .false.,   'yearly',    'weights_era5_INDIAN_bicubic.nc',    '',       'ERA5_LSM'
-   sn_wndi=          'ERA5_U10',                        1,            'U10',       .true.,    .false.,   'yearly',    'weights_era5_INDIAN_bicubic.nc',    'Uwnd',       'ERA5_LSM'
-   sn_wndj=          'ERA5_V10',                        1,            'V10',       .true.,    .false.,   'yearly',    'weights_era5_INDIAN_bicubic.nc',    'Vwnd',       'ERA5_LSM'
-   sn_slp=           'SPH_ERA5_SP',                     1,            'SP',        .true.,    .false.,   'yearly',    'weights_era5_INDIAN_bicubic.nc',    '',       'ERA5_LSM'
-!   sn_tdif=          'SPH_ERA5_D2M',                    1,            'D2M',       .true.,    .false.,   'yearly',    'weights_era5_INDIAN_bicubic.nc',    '',       'ERA5_LSM'
+   sn_wndi     = 'u_10.15JUNE2009_fill'       ,         6         , 'U_10_MOD',   .false.    , .true. , 'yearly'  , 'weights_core_orca2_bicubic_noc.nc'   , 'Uwnd'   , ''
+   sn_wndj     = 'v_10.15JUNE2009_fill'       ,         6         , 'V_10_MOD',   .false.    , .true. , 'yearly'  , 'weights_core_orca2_bicubic_noc.nc'   , 'Vwnd'   , ''
+   sn_qsr      = 'ncar_rad.15JUNE2009_fill'   ,        24         , 'SWDN_MOD',   .false.    , .true. , 'yearly'  , 'weights_core_orca2_bilinear_noc.nc'  , ''       , ''
+   sn_qlw      = 'ncar_rad.15JUNE2009_fill'   ,        24         , 'LWDN_MOD',   .false.    , .true. , 'yearly'  , 'weights_core_orca2_bilinear_noc.nc'  , ''       , ''
+   sn_tair     = 't_10.15JUNE2009_fill'       ,         6         , 'T_10_MOD',   .false.    , .true. , 'yearly'  , 'weights_core_orca2_bilinear_noc.nc'  , ''       , ''
+   sn_humi     = 'q_10.15JUNE2009_fill'       ,         6         , 'Q_10_MOD',   .false.    , .true. , 'yearly'  , 'weights_core_orca2_bilinear_noc.nc'  , ''       , ''
+   sn_prec     = 'ncar_precip.15JUNE2009_fill',        -1         , 'PRC_MOD1',   .false.    , .true. , 'yearly'  , 'weights_core_orca2_bilinear_noc.nc'  , ''       , ''
+   sn_snow     = 'ncar_precip.15JUNE2009_fill',        -1         , 'SNOW'    ,   .false.    , .true. , 'yearly'  , 'weights_core_orca2_bilinear_noc.nc'  , ''       , ''
+   sn_slp      = 'slp.15JUNE2009_fill'        ,         6         , 'SLP'     ,   .false.    , .true. , 'yearly'  , 'weights_core_orca2_bilinear_noc.nc'  , ''       , ''
+   sn_tdif     = 'taudif_core'                ,        24         , 'taudif'  ,   .false.    , .true. , 'yearly'  , 'weights_core_orca2_bilinear_noc.nc'  , ''       , ''
    !                    !  bulk algorithm :
-   ln_NCAR     = .true.   ! "NCAR"      algorithm   (Large and Yeager 2008)
+   ln_NCAR     = .false.   ! "NCAR"      algorithm   (Large and Yeager 2008)
    ln_COARE_3p0= .false.   ! "COARE 3.0" algorithm   (Fairall et al. 2003)
    ln_COARE_3p5= .false.   ! "COARE 3.5" algorithm   (Edson et al. 2013)
    ln_ECMWF    = .false.   ! "ECMWF"     algorithm   (IFS cycle 31)
    !
-   cn_dir      = './fluxes/'      !  root directory for the location of the bulk files
+   cn_dir      = './'      !  root directory for the location of the bulk files
    ln_taudif   = .false.   !  HF tau contribution: use "mean of stress module - module of the mean stress" data
-   rn_zqt      = 2.       !  Air temperature and humidity reference height (m)
+   rn_zqt      = 10.       !  Air temperature and humidity reference height (m)
    rn_zu       = 10.       !  Wind vector reference height (m)
-   rn_pfac     = 1.     !  multiplicative factor for precipitation (total & snow)
+   rn_pfac     = 1.        !  multiplicative factor for precipitation (total & snow)
    rn_efac     = 1.        !  multiplicative factor for evaporation (0. or 1.)
-   rn_vfac     = 1.        !  multiplicative factor for ocean/ice velocity
+   rn_vfac     = 0.        !  multiplicative factor for ocean/ice velocity
                            !  in the calculation of the wind stress (0.=absolute winds or 1.=relative winds)
    ln_Cd_L12   = .false.   !  Modify the drag ice-atm and oce-atm depending on ice concentration
                            !  This parameterization is from Lupkes et al. (JGR 2012)
@@ -340,21 +338,21 @@
    rn_abs      =   0.58    !  RGB & 2 bands: fraction of light (rn_si1)
    rn_si0      =   0.35    !  RGB & 2 bands: shortess depth of extinction
    rn_si1      =   23.0    !  2 bands: longest depth of extinction
-   ln_qsr_ice  = .false.    !  light penetration for ice-model LIM3
+   ln_qsr_ice  = .true.    !  light penetration for ice-model LIM3
 /
 !-----------------------------------------------------------------------
 &namsbc_rnf    !   runoffs namelist surface boundary condition          (ln_rnf=T)
 !-----------------------------------------------------------------------
 !              !  file name           ! frequency (hours) ! variable  ! time interp. !  clim  ! 'yearly'/ ! weights  ! rotation ! land/sea mask !
 !              !                      !  (if <0  months)  !   name    !   (logical)  !  (T/F) ! 'monthly' ! filename ! pairing  ! filename      !
-   sn_rnf      = 'river_test'         ,        -1         , 'rorunoff',   .true.     , .true. , 'yearly'  , ''       , ''       , ''
-   sn_cnf      = 'river_test'         ,         0         , 'socoefr0',   .false.    , .true. , 'yearly'  , ''       , ''       , ''
+   sn_rnf      = 'runoff_core_monthly',        -1         , 'sorunoff',   .true.     , .true. , 'yearly'  , ''       , ''       , ''
+   sn_cnf      = 'runoff_core_monthly',         0         , 'socoefr0',   .false.    , .true. , 'yearly'  , ''       , ''       , ''
    sn_s_rnf    = 'runoffs'            ,        24         , 'rosaline',   .true.     , .true. , 'yearly'  , ''       , ''       , ''
    sn_t_rnf    = 'runoffs'            ,        24         , 'rotemper',   .true.     , .true. , 'yearly'  , ''       , ''       , ''
    sn_dep_rnf  = 'runoffs'            ,         0         , 'rodepth' ,   .false.    , .true. , 'yearly'  , ''       , ''       , ''
 
    cn_dir      = './'      !  root directory for the location of the runoff files
-   ln_rnf_mouth= .false.    !  specific treatment at rivers mouths
+   ln_rnf_mouth= .true.    !  specific treatment at rivers mouths
       rn_hrnf     =  15.e0    !  depth over which enhanced vertical mixing is used    (ln_rnf_mouth=T)
       rn_avt_rnf  =   1.e-3   !  value of the additional vertical mixing coef. [m2/s] (ln_rnf_mouth=T)
    rn_rfact    =   1.e0    !  multiplicative factor for runoff
@@ -574,13 +572,13 @@
 !-----------------------------------------------------------------------
 !              !  file name      ! frequency (hours) ! variable  ! time interp.!  clim   ! 'yearly'/ ! weights  ! rotation ! land/sea mask !
 !              !                 !  (if <0  months)  !   name    !  (logical)  !  (T/F ) ! 'monthly' ! filename ! pairing  ! filename      !
-   bn_ssh      = 'INDIAN_bdyT_u2d',         1        , 'sossheig',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_u2d      = 'INDIAN_bdyU_u2d',         1        , 'vobtcrtx',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_v2d      = 'INDIAN_bdyV_u2d',         1        , 'vobtcrty',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_u3d      = 'INDIAN_bdyU_u3d',         1        , 'vozocrtx',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_v3d      = 'INDIAN_bdyV_u3d',         1        , 'vomecrty',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_tem      = 'INDIAN_bdyT_tra',         1        , 'votemper',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
-   bn_sal      = 'INDIAN_bdyT_tra',         1        , 'vosaline',    .true.   , .false. ,  'monthly'  ,    ''    ,   ''     ,     ''
+   bn_ssh      = 'amm12_bdyT_u2d',         24        , 'sossheig',    .true.   , .false. ,  'daily'  ,    ''    ,   ''     ,     ''
+   bn_u2d      = 'amm12_bdyU_u2d',         24        , 'vobtcrtx',    .true.   , .false. ,  'daily'  ,    ''    ,   ''     ,     ''
+   bn_v2d      = 'amm12_bdyV_u2d',         24        , 'vobtcrty',    .true.   , .false. ,  'daily'  ,    ''    ,   ''     ,     ''
+   bn_u3d      = 'amm12_bdyU_u3d',         24        , 'vozocrtx',    .true.   , .false. ,  'daily'  ,    ''    ,   ''     ,     ''
+   bn_v3d      = 'amm12_bdyV_u3d',         24        , 'vomecrty',    .true.   , .false. ,  'daily'  ,    ''    ,   ''     ,     ''
+   bn_tem      = 'amm12_bdyT_tra',         24        , 'votemper',    .true.   , .false. ,  'daily'  ,    ''    ,   ''     ,     ''
+   bn_sal      = 'amm12_bdyT_tra',         24        , 'vosaline',    .true.   , .false. ,  'daily'  ,    ''    ,   ''     ,     ''
 ! for lim2
 !   bn_frld    = 'amm12_bdyT_ice',         24        , 'ileadfra',    .true.   , .false. ,  'daily'  ,    ''    ,   ''     ,     ''
 !   bn_hicif   = 'amm12_bdyT_ice',         24        , 'iicethic',    .true.   , .false. ,  'daily'  ,    ''    ,   ''     ,     ''
@@ -590,7 +588,7 @@
 !   bn_ht_i    = 'amm12_bdyT_ice',         24        , 'iicethic',    .true.   , .false. ,  'daily'  ,    ''    ,   ''     ,     ''
 !   bn_ht_s    = 'amm12_bdyT_ice',         24        , 'isnowthi',    .true.   , .false. ,  'daily'  ,    ''    ,   ''     ,     ''
 
-   cn_dir      = 'OBC/' !  root directory for the location of the bulk files
+   cn_dir      = 'bdydta/' !  root directory for the location of the bulk files
    ln_full_vel = .false.   !  
 /
 !-----------------------------------------------------------------------
@@ -698,7 +696,7 @@
       ln_mus_ups = .false.       !  use upstream scheme near river mouths
    ln_traadv_ubs = .false. !  UBS scheme
       nn_ubs_v   =  2            !  =2  , vertical 2nd order FCT / COMPACT 4th order
-   ln_traadv_qck = .true. !  QUICKEST scheme
+   ln_traadv_qck = .false. !  QUICKEST scheme
 /
 !-----------------------------------------------------------------------
 &namtra_adv_mle !   mixed layer eddy parametrisation (Fox-Kemper param) (default: NO)
@@ -763,7 +761,7 @@
 !-----------------------------------------------------------------------
 &namtra_dmp    !   tracer: T & S newtonian damping                      (default: NO)
 !-----------------------------------------------------------------------
-   ln_tradmp   =  .false.   !  add a damping termn (T) or not (F)
+   ln_tradmp   =  .true.   !  add a damping termn (T) or not (F)
    nn_zdmp     =    0      !  vertical   shape =0    damping throughout the water column
                            !                   =1 no damping in the mixing layer (kz  criteria)
                            !                   =2 no damping in the mixed  layer (rho crieria)
