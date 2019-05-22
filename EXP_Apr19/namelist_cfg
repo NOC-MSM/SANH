@@ -26,12 +26,12 @@
 &namrun        !   parameters of the run
 !-----------------------------------------------------------------------
    cn_exp      =    "BoBEAS"  !  experience name
-   nn_it000    =  101 !  first time step
-   nn_itend    =  1440 ! 10800! 259200!133920! 10800!43200 ! 10day=14400   !  last  time step (std 5475)
+   nn_it000    =  1 !  first time step
+   nn_itend    =  28800 ! 10800! 259200!133920! 10800!43200 ! 10day=14400   !  last  time step (std 5475)
    nn_date0    =  20190401   !  date at nit_0000 (format yyyymmdd) used if ln_rstart=F or (ln_rstart=T and nn_rstctl=0 or 1)
    nn_time0    =       0   !  initial time of day in hhmm
    nn_leapy    =       1   !  Leap year calendar (1) or not (0)
-   ln_rstart   = .true.   !  start from rest (F) or from a restart file (T)
+   ln_rstart   = .false.   !  start from rest (F) or from a restart file (T)
        nn_euler    =  1            !  = 0 : start with forward time step if ln_rstart=T
        nn_rstctl   =  2             !  restart control ==> activated only if ln_rstart=T
       !                             !    = 0 nn_date0 read in namelist ; nn_it000 : read in namelist
@@ -44,9 +44,9 @@
    ln_iscpl    = .false.   !  cavity evolution forcing or coupling to ice sheet model
    nn_istate   =       0   !  output the initial state (1) or not (0)
    ln_rst_list = .false.   !  output restarts at list of times using nn_stocklist (T) or at set frequency with nn_stock (F)
-   nn_stock    =   144 !43200 ! 14400   !  frequency of creation of a restart file (modulo referenced to 1)
+   nn_stock    =   28800 !43200 ! 14400   !  frequency of creation of a restart file (modulo referenced to 1)
    nn_stocklist = 0,0,0,0,0,0,0,0,0,0 ! List of timesteps when a restart file is to be written
-   nn_write    =   144 ! 14400   !  frequency of write in the output file   (modulo referenced to nn_it000)
+   nn_write    =   1440 ! 14400   !  frequency of write in the output file   (modulo referenced to nn_it000)
    ln_mskland  = .false.   !  mask land points in NetCDF outputs (costly: + ~15%)
    ln_cfmeta   = .false.   !  output additional data to netCDF files required for compliance with the CF metadata standard
    ln_clobber  = .true.    !  clobber (overwrite) an existing file
@@ -118,7 +118,7 @@
    nn_msh      =    0      !  create (>0) a mesh file or not (=0)
    rn_isfhmin  =    1.00   !  treshold (m) to discriminate grounding ice to floating ice
    !
-   rn_rdt      =  60.!60.!120.!60.     !  time step for the dynamics (and tracer if nn_acc=0)
+   rn_rdt      =  120.!60.!120.!60.     !  time step for the dynamics (and tracer if nn_acc=0)
    rn_atfp     =    0.1    !  asselin time filter parameter
    !
    ln_crs      = .false.   !  Logical switch for coarsening module
