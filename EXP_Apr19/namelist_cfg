@@ -609,7 +609,7 @@ ln_rnf_depth_ini = .true.    !  compute depth at initialisation from runoff file
     nn_rimwidth   = 9                    !  width of the relaxation zone
     ln_vol        = .false.               !  total volume correction (see nn_volctl parameter)
     nn_volctl     = 1                     !  = 0, the total water flux across open boundaries is zero
-    nb_jpk_bdy    = 75                    ! number of levels in the bdy data (set < 0 if consistent with planned run)
+    nb_jpk_bdy    = 50                    ! number of levels in the bdy data (set < 0 if consistent with planned run)
 /
 !-----------------------------------------------------------------------
 &nambdy_dta    !  open boundaries - external data
