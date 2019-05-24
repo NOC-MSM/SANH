@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netcdf title="aggregation example" xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+  <variable name="vozocrtx" orgName="uo" />
+  <variable name="vomecrty" orgName="vo" />
+  <variable name="votemper" orgName="thetao" />
+  <variable name="vosaline" orgName="so" />
+  <variable name="sossheig" orgName="zos" />
+  <variable name="time_counter" orgName="time" />
+  <aggregation type="union" >
+
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+           <aggregation dimName="time" type="joinExisting">
+	     <netcdf location="/projectsa/accord/BoBEAS/INPUTS/2016/SAL_201603.nc" />
+	     <netcdf location="/projectsa/accord/BoBEAS/INPUTS/2016/SAL_201604.nc" />
+	     <netcdf location="/projectsa/accord/BoBEAS/INPUTS/2016/SAL_201605.nc" />
+     	   </aggregation>
+     </netcdf>
+     
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+           <aggregation dimName="time" type="joinExisting">
+	     <netcdf location="/projectsa/accord/BoBEAS/INPUTS/2016/SSH_201603.nc" />
+	     <netcdf location="/projectsa/accord/BoBEAS/INPUTS/2016/SSH_201604.nc" />
+	     <netcdf location="/projectsa/accord/BoBEAS/INPUTS/2016/SSH_201605.nc" />
+     	   </aggregation>
+     </netcdf>
+     
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+           <aggregation dimName="time" type="joinExisting">
+	     <netcdf location="/projectsa/accord/BoBEAS/INPUTS/2016/TEMP_201603.nc" />
+	     <netcdf location="/projectsa/accord/BoBEAS/INPUTS/2016/TEMP_201604.nc" />
+	     <netcdf location="/projectsa/accord/BoBEAS/INPUTS/2016/TEMP_201605.nc" />
+     	   </aggregation>
+     </netcdf>
+     
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+           <aggregation dimName="time" type="joinExisting">
+	     <netcdf location="/projectsa/accord/BoBEAS/INPUTS/2016/U0_201603.nc" />
+	     <netcdf location="/projectsa/accord/BoBEAS/INPUTS/2016/U0_201604.nc" /> 
+	     <netcdf location="/projectsa/accord/BoBEAS/INPUTS/2016/U0_201605.nc" />
+     	   </aggregation>
+     </netcdf>
+     
+     <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+           <aggregation dimName="time" type="joinExisting">
+	     <netcdf location="/projectsa/accord/BoBEAS/INPUTS/2016/V0_201603.nc" />
+	     <netcdf location="/projectsa/accord/BoBEAS/INPUTS/2016/V0_201604.nc" />
+	     <netcdf location="/projectsa/accord/BoBEAS/INPUTS/2016/V0_201605.nc" />
+     	   </aggregation>
+     </netcdf>
+
+  </aggregation>
+</netcdf>
+
