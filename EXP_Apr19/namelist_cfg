@@ -27,7 +27,7 @@
 !-----------------------------------------------------------------------
    cn_exp      =    "BoBEAS"  !  experience name
    nn_it000    =  1 !  first time step
-   nn_itend    =  7200 ! 28800 ! 10800! 259200!133920! 10800!43200 ! 10day=14400   !  last  time step (std 5475)
+   nn_itend    =  14400 ! 28800 ! 10800! 259200!133920! 10800!43200 ! 10day=14400   !  last  time step (std 5475)
    nn_date0    =  20190401   !  date at nit_0000 (format yyyymmdd) used if ln_rstart=F or (ln_rstart=T and nn_rstctl=0 or 1)
    nn_time0    =       0   !  initial time of day in hhmm
    nn_leapy    =       1   !  Leap year calendar (1) or not (0)
@@ -859,10 +859,10 @@ ln_rnf_depth_ini = .true.    !  compute depth at initialisation from runoff file
 !-----------------------------------------------------------------------
    ln_hpg_zco  = .false.   !  z-coordinate - full steps
    ln_hpg_zps  = .false.   !  z-coordinate - partial steps (interpolation)
-   ln_hpg_sco  = .false.   !  s-coordinate (standard jacobian formulation)
+   ln_hpg_sco  = .true.   !  s-coordinate (standard jacobian formulation)
    ln_hpg_isf  = .false.   !  s-coordinate (sco ) adapted to isf
    ln_hpg_djc  = .false.   !  s-coordinate (Density Jacobian with Cubic polynomial)
-   ln_hpg_prj  = .true.   !  s-coordinate (Pressure Jacobian scheme)
+   ln_hpg_prj  = .false.   !  s-coordinate (Pressure Jacobian scheme)
 /
 !-----------------------------------------------------------------------
 &namdyn_spg    !   surface pressure gradient                            (default: NO)
