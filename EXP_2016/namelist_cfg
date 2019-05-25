@@ -5,8 +5,8 @@
 &namrun        !   parameters of the run
 !-----------------------------------------------------------------------
    cn_exp      =  "INDIAN"  !  experience name
-   nn_it000    = 146881 ! 57601  !  first time step ! CHNAGE THIS TO END OF LAST RUN + 1
-   nn_itend    = 151680 ! crashed in Apr16 ! 138240 !  last  time step (std 1 day = 144) (for dt = 6 min, so 240*dt = 1 day) ! CHANGE THIS TO THIS + 56 DAYS
+   nn_it000    = 163201 ! 57601  !  first time step ! CHNAGE THIS TO END OF LAST RUN + 1
+   nn_itend    = 216960 ! crashed in Apr16 ! 138240 !  last  time step (std 1 day = 144) (for dt = 6 min, so 240*dt = 1 day) ! CHANGE THIS TO THIS + 56 DAYS
    nn_date0    =  20160409  !20110717 !  date at nit_0000 (format yyyymmdd) used if ln_rstart=F or (ln_rstart=T and nn_rstctl=0 or 1)
    nn_time0    =       0   !  initial time of day in hhmm
    nn_leapy    =       1   !  Leap year calendar (1) or not (0)
@@ -16,7 +16,7 @@
       !                             !    = 0 nn_date0 read in namelist ; nn_it000 : read in namelist
       !                             !    = 1 nn_date0 read in namelist ; nn_it000 : check consistancy between namelist and restart
       !                             !    = 2 nn_date0 read in restart  ; nn_it000 : check consistancy between namelist and restart
-      cn_ocerst_in    = "INDIAN_00146880_restart"   !  suffix of ocean restart name (input) ! CHANGE THIS TO LAST RESTART FILE NUMBER
+      cn_ocerst_in    = "INDIAN_00163200_restart"   !  suffix of ocean restart name (input) ! CHANGE THIS TO LAST RESTART FILE NUMBER
       cn_ocerst_indir = "./restarts"         !  directory from which to read input ocean restarts
       cn_ocerst_out   = "restart"   !  suffix of ocean restart name (output)
       cn_ocerst_outdir= "./restarts"         !  directory in which to write output ocean restarts
@@ -24,8 +24,8 @@
 !   cn_ocerst_in   = "ammsurge_restart_oce"   !  suffix of ocean restart name (input)
 !   cn_ocerst_out  = "restart_oce_out"   !  suffix of ocean restart name (input)
    nn_istate   =       0   !  output the initial state (1) or not (0)
-   nn_stock    =  4800 ! 4800=5days at 90s ! 1440-1 day at 60s  ! frequency of creation of a restart file (modulo referenced to 1) ! 28 DAYS
-   nn_write    =  10 ! 86400    !  frequency of write in the output file   (modulo referenced to nit000) 
+   nn_stock    =  6720 ! 6720=7day@90s !  4800=5days at 90s ! 1440-1 day at 60s  ! frequency of creation of a restart file (modulo referenced to 1) ! 28 DAYS
+   nn_write    =  100 ! 86400    !  frequency of write in the output file   (modulo referenced to nit000) 
 /
 !-----------------------------------------------------------------------
 &namcfg        !   parameters of the configuration
