@@ -15,7 +15,8 @@
         <aggregation dimName="time" type="joinExisting">
              <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 	       <aggregation dimName="time" type="joinExisting">
-	                       <netcdf location="/projectsa/NEMO/ash/NEMO_INDIA/BOUNDARY_FORCING/SAL16_dir/JAN/Sal_16_0000.nc" coordValue="578532" />
+                             <!-- Spoof or read 31st Dec (from prev year) time value -->
+			     <netcdf location="/projectsa/NEMO/ash/NEMO_INDIA/BOUNDARY_FORCING/SAL16_dir/JAN/Sal_16_0000.nc" coordValue="578532" />
 	       </aggregation>
              </netcdf>
              <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
@@ -25,6 +26,7 @@
              </netcdf>
              <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
 	       <aggregation dimName="time" type="joinExisting">
+		     <!-- Spoof or read 1st Jan (from following year) time value -->
 			       <netcdf location="/projectsa/NEMO/ash/NEMO_INDIA/BOUNDARY_FORCING/SAL16_dir/DEC/Sal_16_0365.nc" coordValue="587340" />
 	       </aggregation>
              </netcdf>
@@ -35,6 +37,7 @@
         <aggregation dimName="time" type="joinExisting">
              <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
                <aggregation dimName="time" type="joinExisting">
+                             <!-- Spoof or read 31st Dec (from prev year) time value -->
 	                  <netcdf location="/projectsa/NEMO/ash/NEMO_INDIA/BOUNDARY_FORCING/SSH16_dir/JAN/SSH_16_0000.nc" coordValue="578532" />
                </aggregation>
              </netcdf>
@@ -45,6 +48,7 @@
              </netcdf>
              <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
                <aggregation dimName="time" type="joinExisting">
+		     <!-- Spoof or read 1st Jan (from following year) time value -->
 			  <netcdf location="/projectsa/NEMO/ash/NEMO_INDIA/BOUNDARY_FORCING/SSH16_dir/DEC/SSH_16_0365.nc" coordValue="587340" />
                </aggregation>
              </netcdf>
@@ -55,6 +59,7 @@
         <aggregation dimName="time" type="joinExisting">
              <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
                <aggregation dimName="time" type="joinExisting">
+                             <!-- Spoof or read 31st Dec (from prev year) time value -->
 	                  <netcdf location="/projectsa/NEMO/ash/NEMO_INDIA/BOUNDARY_FORCING/TEMP16_dir/JAN/Temp_16_0000.nc" coordValue="578532" />
                </aggregation>
              </netcdf>
@@ -65,6 +70,7 @@
              </netcdf>
              <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
                <aggregation dimName="time" type="joinExisting">
+		     <!-- Spoof or read 1st Jan (from following year) time value -->
 			  <netcdf location="/projectsa/NEMO/ash/NEMO_INDIA/BOUNDARY_FORCING/TEMP16_dir/DEC/Temp_16_0365.nc" coordValue="587340" />
                </aggregation>
              </netcdf>
@@ -75,6 +81,7 @@
         <aggregation dimName="time" type="joinExisting">
              <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
                <aggregation dimName="time" type="joinExisting">
+                             <!-- Spoof or read 31st Dec (from prev year) time value -->
 	                  <netcdf location="/projectsa/NEMO/ash/NEMO_INDIA/BOUNDARY_FORCING/U016_dir/JAN/U0_16_0000.nc" coordValue="578532" />
                </aggregation>
              </netcdf>
@@ -85,6 +92,7 @@
              </netcdf>
              <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
                <aggregation dimName="time" type="joinExisting">
+		     <!-- Spoof or read 1st Jan (from following year) time value -->
 			  <netcdf location="/projectsa/NEMO/ash/NEMO_INDIA/BOUNDARY_FORCING/U016_dir/DEC/U0_16_0365.nc" coordValue="587340" />
                </aggregation>
              </netcdf>
@@ -95,6 +103,7 @@
         <aggregation dimName="time" type="joinExisting">
              <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
                <aggregation dimName="time" type="joinExisting">
+                             <!-- Spoof or read 31st Dec (from prev year) time value -->
 		                  <netcdf location="/projectsa/NEMO/ash/NEMO_INDIA/BOUNDARY_FORCING/V016_dir/JAN/V0_16_0000.nc" coordValue="578532" />
                </aggregation>
              </netcdf>
@@ -105,7 +114,8 @@
              </netcdf>
              <netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
                <aggregation dimName="time" type="joinExisting">
-				  <netcdf location="/projectsa/NEMO/ash/NEMO_INDIA/BOUNDARY_FORCING/V016_dir/DEC/V0_16_0365.nc" coordValue="587340" />
+		     <!-- Spoof or read 1st Jan (from following year) time value -->
+		     <netcdf location="/projectsa/NEMO/ash/NEMO_INDIA/BOUNDARY_FORCING/V016_dir/DEC/V0_16_0365.nc" coordValue="587340" />
                </aggregation>
              </netcdf>
         </aggregation>
