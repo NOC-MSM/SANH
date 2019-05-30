@@ -5,8 +5,8 @@
 &namrun        !   parameters of the run
 !-----------------------------------------------------------------------
    cn_exp      =  "INDIAN"  !  experience name
-   nn_it000    = 270721 ! 57601  !  first time step ! CHNAGE THIS TO END OF LAST RUN + 1
-   nn_itend    = 324480 ! crashed in Apr16 ! 138240 !  last  time step (std 1 day = 144) (for dt = 6 min, so 240*dt = 1 day) ! CHANGE THIS TO THIS + 56 DAYS
+   nn_it000    = 364801 ! 57601  !  first time step ! CHNAGE THIS TO END OF LAST RUN + 1
+   nn_itend    = 398400 ! crashed in Apr16 ! 138240 !  last  time step (std 1 day = 144) (for dt = 6 min, so 240*dt = 1 day) ! CHANGE THIS TO THIS + 56 DAYS
    nn_date0    =  20160409  !20110717 !  date at nit_0000 (format yyyymmdd) used if ln_rstart=F or (ln_rstart=T and nn_rstctl=0 or 1)
    nn_time0    =       0   !  initial time of day in hhmm
    nn_leapy    =       1   !  Leap year calendar (1) or not (0)
@@ -16,7 +16,7 @@
       !                             !    = 0 nn_date0 read in namelist ; nn_it000 : read in namelist
       !                             !    = 1 nn_date0 read in namelist ; nn_it000 : check consistancy between namelist and restart
       !                             !    = 2 nn_date0 read in restart  ; nn_it000 : check consistancy between namelist and restart
-      cn_ocerst_in    = "INDIAN_00270720_restart"   !  suffix of ocean restart name (input) ! CHANGE THIS TO LAST RESTART FILE NUMBER
+      cn_ocerst_in    = "INDIAN_00364800_restart"   !  suffix of ocean restart name (input) ! CHANGE THIS TO LAST RESTART FILE NUMBER
       cn_ocerst_indir = "./restarts"         !  directory from which to read input ocean restarts
       cn_ocerst_out   = "restart"   !  suffix of ocean restart name (output)
       cn_ocerst_outdir= "./restarts"         !  directory in which to write output ocean restarts
