@@ -12,8 +12,7 @@ Getting started
 
   git clone git@github.com:NOC-MSM/BoBEAS.git
 
-
-Access **JASMIN data**. File structure `<https://github.com/NOC-MSM/BoBEAS/wiki/JASMIN_data_storage>`_ On your favourite linux box::
+Access **JASMIN data**. For JASMIN file structure see wiki page: JASMIN_data_storage). On your favourite linux box::
 
   exec ssh-agent $SHELL
   ssh-add ~/.ssh/id_rsa_jasmin
