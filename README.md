@@ -8,26 +8,32 @@ NEMO BoBEAS configuration
 Getting started
 ===============
 
-**Clone** this repository onto your favourite linux box::
+**Clone** this repository onto your favourite linux box:
 
+<pre>
   git clone git@github.com:NOC-MSM/BoBEAS.git
+</pre>
 
 Access **JASMIN data**. For JASMIN file structure see wiki page: JASMIN_data_storage). On your favourite linux box::
 
-  ``exec ssh-agent $SHELL``
-  
-  ``ssh-add ~/.ssh/id_rsa_jasmin``
+<pre>
+  exec ssh-agent $SHELL
+  ssh-add ~/.ssh/id_rsa_jasmin
+</pre>
 
 On request enter passphrase for ``/login/$USER/.ssh/id_rsa_jasmin``. Hopefully this
 is accepted. Then successively log into a login node. This can not see the BoBEAS data::
 
-  ``ssh -A jelt@jasmin-login1.ceda.ac.uk``
+<pre>
+  ssh -A jelt@jasmin-login1.ceda.ac.uk
+</pre>
 
 From here you can hop to a compute node, which can see the BoBEAS data::
 
-  ``ssh -A jelt@jasmin-sci1.ceda.ac.uk``
-
-  ``cd /gws/nopw/j04/campus/pseudoDropBox/BoBEAS``
+<pre>
+  ssh -A jelt@jasmin-sci1.ceda.ac.uk
+  cd /gws/nopw/j04/campus/pseudoDropBox/BoBEAS
+</pre>
 
 File Hierarchy
 ==============
