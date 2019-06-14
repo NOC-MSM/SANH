@@ -1,5 +1,10 @@
 # log file for main1.sh script
 SCRIPTS/main_output.txt
 
+<<<<<<< HEAD
 # netcdf files
 *.nc
+=======
+# tilde files
+*~
+>>>>>>> c43e9d0964aee890034a33747d75d0b118debbff
