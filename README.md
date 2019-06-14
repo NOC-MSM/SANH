@@ -40,9 +40,16 @@ facilitate configuration archival and sharing:
 <pre>
 BoBEAS
 |
-|____README.md
+|__ ARCH
+|__ EXP_2016	
+|__ EXP_Apr19
+|__ MY_SRC
+|__ SCRIPTS
+|__ STARTFILES	
 |
-|____stuff
+|__ .gitignore	
+|__ README.md	
+|__ cpp_file.fcm	
 </pre>
 
 
