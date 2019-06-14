@@ -1,10 +1,6 @@
 # NEMO_cfgs
 NEMO BoBEAS configuration
 
-** IN ORDER TO FINISH THE DELIVERABLES I AM RESTRUCTING THIS REPO. SO THIS IS W.I.P**
-
-** BRANCH:ashbre contains the original structure **
-
 Getting started
 ===============
 
@@ -48,3 +44,7 @@ BoBEAS
 |
 |____stuff
 </pre>
+
+
+** NB Branch:ashbre contains the original repository. Changes were made to add documentation and migrate recipes to python  **
+
