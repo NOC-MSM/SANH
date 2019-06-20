@@ -1,5 +1,4 @@
-# NEMO_cfgs
-NEMO BoBEAS configuration
+# Bay of Bengal and East Arabian Sea (BoBEAS) NEMO regional model
 
 ![Bathymetry for BoBEAS domain](https://github.com/NOC-MSM/BoBEAS/wiki/FIGURES/BoBEAS_bathymetry.jpg)
 
