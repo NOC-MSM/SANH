@@ -1,6 +1,8 @@
 # NEMO_cfgs
 NEMO BoBEAS configuration
 
+![Bathymetry for BoBEAS domain](https://github.com/NOC-MSM/BoBEAS/wiki/FIGURES/BoBEAS_bathymetry.jpg)
+
 Getting started
 ===============
 
