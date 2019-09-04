@@ -1,4 +1,4 @@
-# Bay of Bengal and East Arabian Sea (BoBEAS) NEMO regional model
+# South Asian Nitrogen Hub (SANH) NEMO regional model
 
 ![Bathymetry for SANH domain](https://github.com/NOC-MSM/SANH/wiki/FIGURES/SANH_bathy.png)
 
@@ -8,7 +8,7 @@ Getting started
 **Clone** this repository onto your favourite linux box:
 
 <pre>
-  git clone git@github.com:NOC-MSM/BoBEAS.git
+  git clone git@github.com:NOC-MSM/SANH.git
 </pre>
 
 Access **JASMIN data**. For JASMIN file structure see wiki page: JASMIN_data_storage). On your favourite linux box::
@@ -19,13 +19,13 @@ Access **JASMIN data**. For JASMIN file structure see wiki page: JASMIN_data_sto
 </pre>
 
 On request enter passphrase for ``/login/$USER/.ssh/id_rsa_jasmin``. Hopefully this
-is accepted. Then successively log into a login node. This can not see the BoBEAS data::
+is accepted. Then successively log into a login node. This can not see the SANH data::
 
 <pre>
   ssh -A jelt@jasmin-login1.ceda.ac.uk
 </pre>
 
-From here you can hop to a compute node, which can see the BoBEAS data::
+From here you can hop to a compute node, which can see the SANH data::
 
 <pre>
   ssh -A jelt@jasmin-sci1.ceda.ac.uk
@@ -52,7 +52,4 @@ BoBEAS
 |__ README.md	
 |__ cpp_file.fcm	
 </pre>
-
-
-** NB Branch:ashbre contains the original repository. Changes were made to add documentation and migrate recipes to python  **
 
