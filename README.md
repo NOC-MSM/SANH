@@ -1,6 +1,6 @@
 # Bay of Bengal and East Arabian Sea (BoBEAS) NEMO regional model
 
-![Bathymetry for BoBEAS domain](https://github.com/NOC-MSM/BoBEAS/wiki/FIGURES/BoBEAS_bathymetry.jpg)
+![Bathymetry for SANH domain](https://github.com/NOC-MSM/SANH/wiki/FIGURES/SANH_bathy.png)
 
 Getting started
 ===============
