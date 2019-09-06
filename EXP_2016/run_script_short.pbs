@@ -4,14 +4,13 @@
 # CLUSTER BITS
 #===============================================================
 #PBS -N SANH
-#PBS -l select=21
-#PBS -l walltime=12:00:00
+#PBS -l select=5
+#PBS -l walltime=00:20:00
 #PBS -A n01-ACCORD
-#PBS -j oe
-#PBS -r n
 # mail alert at (b)eginning, (e)nd and (a)bortion of execution
 #PBS -m bea
 #PBS -M jenjar@noc.ac.uk
+#PBS -q short
 
 module swap PrgEnv-cray PrgEnv-intel
 module load cray-netcdf-hdf5parallel
@@ -30,7 +29,9 @@ export OMP_NUM_THREADS=1
 ulimit -s unlimited
 ulimit -c unlimited
 
-export OCEANCORES=480 #550
+rm -f core
+
+export OCEANCORES=88 #550
 export XIOSCORES=4
 
 #===============================================================
