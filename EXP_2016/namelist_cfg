@@ -175,18 +175,18 @@
    nb_bdy         = 1                    !  number of open boundary sets
    cn_coords_file = 'coordinates.bdy.nc' !  bdy coordinates files
    cn_dyn2d       = 'flather'            ! was flather
-   nn_dyn2d_dta   =  3                   !  = 0, bdy data are equal to the initial state
+   nn_dyn2d_dta   =  2                   !  = 0, bdy data are equal to the initial state
                                          !  = 1, bdy data are read in 'bdydata   .nc' files
                                          !  = 2, use tidal harmonic forcing data from files
                                          !  = 3, use external data AND tidal harmonic forcing
 
     cn_dyn3d      =  'specified'         ! boundary condition for the baroclinic velocity
-    nn_dyn3d_dta  =  1                   !  = 0, bdy data are equal to the initial state
+    nn_dyn3d_dta  =  0                   !  = 0, bdy data are equal to the initial state
                                          !  = 1, bdy data are read in 'bdydata   .nc' files
 
 
    cn_tra        =  'frs'                ! tracer boundary relaxation scheme
-   nn_tra_dta    =  1                    !  = 0, bdy data are equal to the initial state
+   nn_tra_dta    =  0                    !  = 0, bdy data are equal to the initial state
                                          !  = 1, bdy data are read in 'bdydata   .nc' files
    nn_rimwidth   = 9                     !  width of the relaxation zone
    ln_tra_dmp    = .false.
