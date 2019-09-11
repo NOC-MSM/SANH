@@ -3,7 +3,7 @@ cd $TDIR/NESTING
 
 ln -s $GFILE/DOMAIN/rotated/coordinates_ORCA_R12.nc $TDIR/NESTING/.
 #cp $GFILE/DOMAIN/namelist.input $DOMAIN/ #this copies over the original namelist file for editing
-cp $DOMAIN/namelist.input $TDIR/NESTING/
+cp /work/n01/n01/jenjar93/BoBEAS/DOMAIN/namelist.input $TDIR/NESTING/
 
 ./agrif_create_coordinates.exe
 
