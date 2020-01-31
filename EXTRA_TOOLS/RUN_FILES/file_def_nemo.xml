@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+
+    <!-- 
+============================================================================================================
+=                                           output files definition                                        =
+=                                            Define your own files                                         =
+=                                         put the variables you want...                                    =
+============================================================================================================
+    -->
+    
+    <file_definition type="one_file" name="@expname@_@freq@_@startdate@_@enddate@" sync_freq="10d" min_digits="4">
+    
+      <file_group id="1ts" output_freq="1ts"  output_level="10" enabled=".TRUE."/> <!-- 1 time step files -->
+
+<!--
+      <file_group id="1h" output_freq="1h"  output_level="10" enabled=".TRUE."> 
+  	<file id="file19" name_suffix="_SSH" description="ocean T grid variables" >
+    	 <field field_ref="ssh"          name="zos"   />
+  	</file>
+      </file_group>
+-->
+
+
+      <file_group id="1h" output_freq="1h"  output_level="10" enabled=".TRUE."> <!-- 1h files -->
+        <file id="file20" name_suffix="_SSH" description="ocean T grid variables" >
+         <field field_ref="ssh"          name="zos"     operation="instant" long_name="sea_surface_height_above_geoid"      />
+        </file>
+      </file_group>
+      <file_group id="2h" output_freq="2h"  output_level="10" enabled=".TRUE."/> <!-- 2h files -->
+      <file_group id="3h" output_freq="3h"  output_level="10" enabled=".TRUE."/> <!-- 3h files -->     
+      <file_group id="4h" output_freq="4h"  output_level="10" enabled=".TRUE."/> <!-- 4h files -->
+      <file_group id="6h" output_freq="6h"  output_level="10" enabled=".TRUE."/> <!-- 6h files -->     
+      <file_group id="1d" output_freq="1d"  output_level="10" enabled=".TRUE."> <!-- 1d files -->
+         <file id="file21" name_suffix="_2D_gridU" description="ocean U grid variables" >
+          <field field_ref="ssu"         name="ssu"    long_name="sea_surface_x_velocity" />
+        </file>
+        <file id="file22" name_suffix="_2D_gridV" description="ocean V grid variables" >
+          <field field_ref="ssv"         name="ssv"    long_name="sea_surface_y_velocity" />
+        </file>
+        <file id="file23" name_suffix="_2D_gridT" description="ocean V grid variables" >
+          <field field_ref="sst"         name="sst"    long_name="sea_surface_temperature" />
+          <field field_ref="sss"         name="sss"    long_name="sea_surface_salinity" />
+          <field field_ref="mldr10_1"         name="mldr10_1"    long_name="Mixed Layer Depth (dsigma = 0.01 wrt 10m)" />
+        </file>
+      </file_group>
+      <file_group id="3d" output_freq="3d"  output_level="10" enabled=".TRUE."/> <!-- 3d files -->
+      <file_group id="5d" output_freq="5d"  output_level="10" enabled=".TRUE.">  <!-- 5d files -->   
+        <file id="file24" name_suffix="_gridT" description="ocean T grid variables" >
+          <field field_ref="toce"         name="toce"    long_name="temperature" />
+          <field field_ref="soce"         name="soce"    long_name="salinity" />
+       </file>
+        <file id="file25" name_suffix="_gridU" description="ocean U grid variables" >
+          <field field_ref="uoce"         name="uoce"    long_name="x_velocity" />
+        </file>
+
+        <file id="file26" name_suffix="_gridV" description="ocean V grid variables" >
+          <field field_ref="voce"         name="voce"    long_name="y_velocity" />
+        </file>
+      </file_group>
+
+
+      <file_group id="tidal_harmonics" output_freq="1h"  output_level="10" enabled=".TRUE."> <!-- 1d files -->
+<!--
+        <file id="tidalanalysis.grid_T" name="harmonic_grid_T" description="ocean T grid variables"  enabled=".TRUE.">
+
+          <field field_ref="O1amp"         name="O1amp"       operation="instant" enabled=".TRUE." />
+          <field field_ref="O1phase"       name="O1phase"     operation="instant" enabled=".TRUE." />
+          <field field_ref="K1amp"         name="K1amp"       operation="instant" enabled=".TRUE." />
+          <field field_ref="K1phase"       name="K1phase"     operation="instant" enabled=".TRUE." />
+          <field field_ref="Q1amp"         name="Q1amp"       operation="instant" enabled=".TRUE." />
+          <field field_ref="Q1phase"       name="Q1phase"     operation="instant" enabled=".TRUE." />
+          <field field_ref="P1amp"         name="P1amp"       operation="instant" enabled=".TRUE." />
+          <field field_ref="P1phase"       name="P1phase"     operation="instant" enabled=".TRUE." />
+          <field field_ref="M2amp"         name="M2amp"       operation="instant" enabled=".TRUE." />
+          <field field_ref="M2phase"       name="M2phase"     operation="instant" enabled=".TRUE." />
+          <field field_ref="S2amp"         name="S2amp"       operation="instant" enabled=".TRUE." />
+          <field field_ref="S2phase"       name="S2phase"     operation="instant" enabled=".TRUE." />
+          <field field_ref="N2amp"         name="N2amp"       operation="instant" enabled=".TRUE." />
+          <field field_ref="N2phase"       name="N2phase"     operation="instant" enabled=".TRUE." />
+          <field field_ref="K2amp"         name="K2amp"       operation="instant" enabled=".TRUE." />
+          <field field_ref="K2phase"       name="K2phase"     operation="instant" enabled=".TRUE." />
+          <field field_ref="M4amp"         name="M4amp"       operation="instant" enabled=".TRUE." />
+          <field field_ref="M4phase"       name="M4phase"     operation="instant" enabled=".TRUE." />
+        </file>
+-->
+      </file_group>
+
+
+      <file_group id="1m" output_freq="1mo" output_level="10" enabled=".TRUE."> <!-- real monthly files -->
+        <file id="file27" name_suffix="_gridT" description="ocean T grid variables" >
+          <field field_ref="toce_e3t"         name="toce_e3t"    long_name="temperature (thickness weighted)" />
+          <field field_ref="soce_e3t"         name="soce_e3t"    long_name="salinity (thickness weighted)" />
+        </file>
+        <file id="file28" name_suffix="_gridU" description="ocean U grid variables" >
+          <field field_ref="uoce_e3u"         name="uoce_e3u"    long_name="ocean current along i-axis  (thickness weighted)" />
+          <field field_ref="u_masstr_vint"    name="u_masstr_vint"    long_name="ocean eulerian mass transport along i-axis" />
+          <field field_ref="u_masstr"         name="u_masstr"    long_name="ocean_mass_x_transport" />
+          <field field_ref="u_heattr"         name="u_heattr"    long_name="ocean eulerian heat transport along i-axis" />
+          <field field_ref="u_salttr"         name="u_salttr"    long_name="ocean eulerian salt transport along i-axis" />
+        </file>
+        <file id="file29" name_suffix="_gridV" description="ocean V grid variables" >
+          <field field_ref="voce_e3v"         name="voce_e3v"    long_name="ocean current along j-axis  (thickness weighted)" />
+          <field field_ref="v_masstr"         name="v_masstr"    long_name="ocean eulerian mass transport along j-axis" />
+          <field field_ref="v_heattr"         name="v_heattr"    long_name="ocean eulerian heat transport along j-axis" />
+          <field field_ref="v_salttr"         name="v_salttr"    long_name="ocean eulerian salt transport along j-axis" />
+        </file>
+      </file_group>
+
+      <file_group id="2m" output_freq="2mo" output_level="10" enabled=".TRUE."/> <!-- real 2m files -->
+      <file_group id="3m" output_freq="3mo" output_level="10" enabled=".TRUE."/> <!-- real 3m files -->
+      <file_group id="4m" output_freq="4mo" output_level="10" enabled=".TRUE."/> <!-- real 4m files -->
+      <file_group id="6m" output_freq="6mo" output_level="10" enabled=".TRUE."/> <!-- real 6m files -->
+      <file_group id="1y"  output_freq="1y" output_level="10" enabled=".TRUE."/> <!-- real yearly files -->
+      <file_group id="2y"  output_freq="2y" output_level="10" enabled=".TRUE."/> <!-- real 2y files -->
+      <file_group id="5y"  output_freq="5y" output_level="10" enabled=".TRUE."/> <!-- real 5y files -->
+      <file_group id="10y" output_freq="10y" output_level="10" enabled=".TRUE."/> <!-- real 10y files -->
+
+   </file_definition>
+    

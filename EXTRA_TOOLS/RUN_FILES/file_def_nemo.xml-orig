@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+
+    <!-- 
+============================================================================================================
+=                                           output files definition                                        =
+=                                            Define your own files                                         =
+=                                         put the variables you want...                                    =
+============================================================================================================
+    -->
+    
+    <file_definition type="one_file" name="@expname@_@freq@_@startdate@_@enddate@" sync_freq="10d" min_digits="4">
+    
+      <file_group id="1ts" output_freq="1ts"  output_level="10" enabled=".TRUE."/> <!-- 1 time step files -->
+<!--         <file id="file18" name_suffix="_SSH" description="ocean T grid variables" >
+         <field field_ref="ssh"          name="zos"   />
+         <field field_ref="toce"          name="tos"   />
+         <field field_ref="soce"          name="sos"   />
+         <field field_ref="uoce"          name="uos"   />
+         <field field_ref="voce"          name="vos"   />
+        </file>
+      </file_group>
+-->
+
+      <file_group id="1h" output_freq="1h"  output_level="10" enabled=".TRUE."/> <!-- 1h files -->
+<!--  	<file id="file19" name_suffix="_SSH" description="ocean T grid variables" >
+	 <filed field_ref="sss"		 name="sos"   />
+  	</file>
+      </file_group>
+-->
+
+      <file_group id="2h" output_freq="2h"  output_level="10" enabled=".TRUE."/> <!-- 2h files -->
+      <file_group id="3h" output_freq="3h"  output_level="10" enabled=".TRUE."/> <!-- 3h files -->     
+      <file_group id="4h" output_freq="4h"  output_level="10" enabled=".TRUE."/> <!-- 4h files -->
+<!--       <file id="file19" name_suffix="_SSH" description="ocean T grid variables" >
+         <field field_ref="ssh"          name="zos"   />
+         <field field_ref="sst"          name="tos"   />
+	 <field field_ref="sss"          name="sos"   />
+        </file>
+      </file_group>
+-->
+
+      <file_group id="6h" output_freq="6h"  output_level="10" enabled=".TRUE."/> <!-- 6h files -->     
+      <file_group id="1d" output_freq="1d"  output_level="10" enabled=".TRUE."/> <!-- 1d files -->
+      <file_group id="3d" output_freq="3d"  output_level="10" enabled=".TRUE."/> <!-- 3d files -->
+      <file_group id="5d" output_freq="5d"  output_level="10" enabled=".TRUE.">  <!-- 5d files -->
+
+      <file id="file19" name_suffix="_SSH" description="ocean T grid variables" >
+<!--         <field field_ref="ssh"          name="zos"   /> -->
+         <field field_ref="sst"          name="tos"   />
+         <field field_ref="sss"          name="sos"   />
+        </file>
+      </file_group>  
+<!--
+	<file id="file20" name_suffix="_Tides" description="tidal harmonics" >
+	  <field field_ref="M2x"          name="M2x"      long_name="M2 Elevation harmonic real part"                       />
+	  <field field_ref="M2y"          name="M2y"      long_name="M2 Elevation harmonic imaginary part"                  />
+	  <field field_ref="M2x_u"        name="M2x_u"    long_name="M2 current barotrope along i-axis harmonic real part "       />
+	  <field field_ref="M2y_u"        name="M2y_u"    long_name="M2 current barotrope along i-axis harmonic imaginary part "  />
+	  <field field_ref="M2x_v"        name="M2x_v"    long_name="M2 current barotrope along j-axis harmonic real part "       />
+	  <field field_ref="M2y_v"        name="M2y_v"    long_name="M2 current barotrope along j-axis harmonic imaginary part "  />
+	</file>
+
+        <file id="file11" name_suffix="_Tides_T" >
+          <field field_ref="M2x"     name="M2_x_elev"  />
+          <field field_ref="M2y"     name="M2_y_elev"  />
+          <field field_ref="S2x"     name="S2_x_elev"  />
+          <field field_ref="S2y"     name="S2_y_elev"  />
+          <field field_ref="N2x"     name="N2_x_elev"  />
+          <field field_ref="N2y"     name="N2_y_elev"  />
+          <field field_ref="K2x"     name="K2_x_elev"  />
+          <field field_ref="K2y"     name="K2_y_elev"  />
+          <field field_ref="K1x"     name="K1_x_elev"  />
+          <field field_ref="K1y"     name="K1_y_elev"  />
+          <field field_ref="M4x"     name="M4_x_elev"  />
+          <field field_ref="M4y"     name="M4_y_elev"  />
+          <field field_ref="Q1x"     name="Q1_x_elev"  />
+          <field field_ref="Q1y"     name="Q1_y_elev"  />
+          <field field_ref="O1x"     name="O1_x_elev"  />
+          <field field_ref="O1y"     name="O1_y_elev"  />
+          <field field_ref="P1x"     name="P1_x_elev"  />
+          <field field_ref="P1y"     name="P1_y_elev"  />
+          <field field_ref="S1x"     name="S1_x_elev"  />
+          <field field_ref="S1y"     name="S1_y_elev"  />
+          <field field_ref="2N2x"    name="a2N2_x_elev"  />
+          <field field_ref="2N2y"    name="a2N2_y_elev"  />
+          <field field_ref="MU2x"    name="MU2_x_elev"  />
+          <field field_ref="MU2y"    name="MU2_y_elev"  />
+          <field field_ref="NU2x"    name="NU2_x_elev"  />
+          <field field_ref="NU2y"    name="NU2_y_elev"  />
+          <field field_ref="L2x"     name="L2_x_elev"  />
+          <field field_ref="L2y"     name="L2_y_elev"  />
+          <field field_ref="T2x"     name="T2_x_elev"  />
+          <field field_ref="T2y"     name="T2_y_elev"  />
+        </file>
+
+        <file id="file12" name_suffix="_Tides_U" >
+          <field field_ref="M2x_u"     name="M2_x_u"  />
+          <field field_ref="M2y_u"     name="M2_y_u"  />
+          <field field_ref="S2x_u"     name="S2_x_u"  />
+          <field field_ref="S2y_u"     name="S2_y_u"  />
+          <field field_ref="N2x_u"     name="N2_x_u"  />
+          <field field_ref="N2y_u"     name="N2_y_u"  />
+          <field field_ref="K2x_u"     name="K2_x_u"  />
+          <field field_ref="K2y_u"     name="K2_y_u"  />
+          <field field_ref="K1x_u"     name="K1_x_u"  />
+          <field field_ref="K1y_u"     name="K1_y_u"  />
+          <field field_ref="M4x_u"     name="M4_x_u"  />
+          <field field_ref="M4y_u"     name="M4_y_u"  />
+          <field field_ref="Q1x_u"     name="Q1_x_u"  />
+          <field field_ref="Q1y_u"     name="Q1_y_u"  />
+          <field field_ref="O1x_u"     name="O1_x_u"  />
+          <field field_ref="O1y_u"     name="O1_y_u"  />
+          <field field_ref="P1x_u"     name="P1_x_u"  />
+          <field field_ref="P1y_u"     name="P1_y_u"  />
+          <field field_ref="S1x_u"     name="S1_x_u" />
+          <field field_ref="S1y_u"     name="S1_y_u" />
+          <field field_ref="2N2x_u"    name="a2N2_x_u" />
+          <field field_ref="2N2y_u"    name="a2N2_y_u" />
+          <field field_ref="MU2x_u"    name="MU2_x_u" />
+          <field field_ref="MU2y_u"    name="MU2_y_u" />
+          <field field_ref="NU2x_u"    name="NU2_x_u" />
+          <field field_ref="NU2y_u"    name="NU2_y_u" />
+          <field field_ref="L2x_u"     name="L2_x_u" />
+          <field field_ref="L2y_u"     name="L2_y_u" />
+          <field field_ref="T2x_u"     name="T2_x_u" />
+          <field field_ref="T2y_u"     name="T2_y_u" />
+        </file>
+
+        <file id="file13" name_suffix="_Tides_V" >
+          <field field_ref="M2x_v"     name="M2_x_v"  />
+          <field field_ref="M2y_v"     name="M2_y_v"  />
+          <field field_ref="S2x_v"     name="S2_x_v"  />
+          <field field_ref="S2y_v"     name="S2_y_v"  />
+          <field field_ref="N2x_v"     name="N2_x_v"  />
+          <field field_ref="N2y_v"     name="N2_y_v"  />
+          <field field_ref="K2x_v"     name="K2_x_v"  />
+          <field field_ref="K2y_v"     name="K2_y_v"  />
+          <field field_ref="K1x_v"     name="K1_x_v"  />
+          <field field_ref="K1y_v"     name="K1_y_v"  />
+          <field field_ref="M4x_v"     name="M4_x_v"  />
+          <field field_ref="M4y_v"     name="M4_y_v"  />
+          <field field_ref="Q1x_v"     name="Q1_x_v"  />
+          <field field_ref="Q1y_v"     name="Q1_y_v"  />
+          <field field_ref="O1x_v"     name="O1_x_v"  />
+          <field field_ref="O1y_v"     name="O1_y_v"  />
+          <field field_ref="P1x_v"     name="P1_x_v"  />
+          <field field_ref="P1y_v"     name="P1_y_v"  />
+          <field field_ref="S1x_v"     name="S1_x_v" />
+          <field field_ref="S1y_v"     name="S1_y_v" />
+          <field field_ref="2N2x_v"    name="a2N2_x_v" />
+          <field field_ref="2N2y_v"    name="a2N2_y_v" />
+          <field field_ref="MU2x_v"    name="MU2_x_v" />
+          <field field_ref="MU2y_v"    name="MU2_y_v" />
+          <field field_ref="NU2x_v"    name="NU2_x_v" />
+          <field field_ref="NU2y_v"    name="NU2_y_v" />
+          <field field_ref="L2x_v"     name="L2_x_v" />
+          <field field_ref="L2y_v"     name="L2_y_v" />
+          <field field_ref="T2x_v"     name="T2_x_v" />
+          <field field_ref="T2y_v"     name="T2_y_v" />
+        </file>
+
+      </file_group>
+-->
+
+      <file_group id="1m" output_freq="1mo" output_level="10" enabled=".TRUE."/> <!-- real monthly files -->
+      <file_group id="2m" output_freq="2mo" output_level="10" enabled=".TRUE."/> <!-- real 2m files -->
+      <file_group id="3m" output_freq="3mo" output_level="10" enabled=".TRUE."/> <!-- real 3m files -->
+      <file_group id="4m" output_freq="4mo" output_level="10" enabled=".TRUE."/> <!-- real 4m files -->
+      <file_group id="6m" output_freq="6mo" output_level="10" enabled=".TRUE."/> <!-- real 6m files -->
+      <file_group id="1y"  output_freq="1y" output_level="10" enabled=".TRUE."/> <!-- real yearly files -->
+      <file_group id="2y"  output_freq="2y" output_level="10" enabled=".TRUE."/> <!-- real 2y files -->
+      <file_group id="5y"  output_freq="5y" output_level="10" enabled=".TRUE."/> <!-- real 5y files -->
+      <file_group id="10y" output_freq="10y" output_level="10" enabled=".TRUE."/> <!-- real 10y files -->
+
+   </file_definition>
+    
