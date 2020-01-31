@@ -1,17 +1,12 @@
 cd $DOMAIN
 
-cp $GFILE/DOMAIN/$BATHY $DOMAIN
+#cp $GFILE/BATH/gebco_in.nc $DOMAIN
+cp $GFILE/BATH/GRIDONE_2008_2D_74.0_-21.0_134.0_25.0.nc $DOMAIN
 
+ncap2 -s 'where(elevation > 0) elevation=0' GRIDONE_2008_2D_74.0_-21.0_134.0_25.0.nc tmp.nc
 
-
-ncks -d longitude,60.,110. -d latitude,0.,30. $BATHY cutdown_bathy.nc
-
-ncap2 -s 'where(depth > 0) depth=0' cutdown_bathy.nc tmp.nc
-
-ncflint --fix_rec_crd -w -1.0,0.0 tmp.nc tmp.nc bathy_in.nc
+ncflint --fix_rec_crd -w -1.0,0.0 tmp.nc tmp.nc gebco_in.nc
 
 rm tmp.nc
-rm $BATHY
-rm cutdown_bathy.nc
 
-cd $WDIR
+cd $WORK

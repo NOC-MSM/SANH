@@ -1,13 +1,14 @@
-cd $WORK
+cd $XIOS
 
-svn co -r1242 http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS/trunk $XIOS_DIR
+svn checkout -r 1566 http://forge.ipsl.jussieu.fr/ioserver/svn/XIOS/branchs/xios-2.5 $XIOS_DIR
 cd $XIOS_DIR
 
-#cp $GITCLONE/ARCH/arch-XC30_ARCHER* arch/.
-cp $ARCH/arch-XC30_ARCHER* arch/.
+#you may need another architecture file as this one is configured for use in ARCHER. A list of architecture files available can be found at $XIOS_DIR/arch
 
-./make_xios --full --prod --arch XC30_ARCHER --netcdf_lib netcdf4_par
+cp $GFILE/arch_xios/arch-XC30_ARCHER* arch/.
 
-ln -s  $XIOS_DIR  $WORK/XIOS
+#make xios
+./make_xios  --arch XC30_ARCHER --full --job 4
 
-cd $WDIR
+
+cd $SCRIPTS

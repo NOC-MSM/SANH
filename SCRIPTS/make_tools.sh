@@ -1,7 +1,7 @@
 cd $TDIR
 
-cp $ARCH/arch-XC_ARCHER_INTEL_NOXIOS.fcm ../ARCH/.
-cp $ARCH/arch-XC_ARCHER_INTEL_XIOS1.fcm  ../ARCH/.
+cp $GFILE/ARCH/arch-XC_ARCHER_INTEL_NOXIOS.fcm ../ARCH/.
+cp $GFILE/ARCH/arch-XC_ARCHER_INTEL_XIOS1.fcm  ../ARCH/.
 
 
 cd $TDIR/WEIGHTS/src
@@ -19,5 +19,5 @@ cd $TDIR
 ./maketools -m XC_ARCHER_INTEL_XIOS1 -n REBUILD_NEMO
 ./maketools -m XC_ARCHER_INTEL_XIOS1 -n WEIGHTS
 
-cd $WDIR
+cd $SCRIPTS
 

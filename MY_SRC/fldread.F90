@@ -809,7 +809,7 @@ CONTAINS
             CASE(3)
                CALL iom_get ( num, jpdom_unknown, 'gdepv', dta_read_z(1:ilendta,1:ipj,1:jpk_bdy) )
                CALL iom_get ( num, jpdom_unknown, 'e3v',  dta_read_dz(1:ilendta,1:ipj,1:jpk_bdy) )
-            CASE DEFAULT ;   CALL ctl_stop( 'unrecognised value for igrd in fld_map' )
+             CASE DEFAULT ;   CALL ctl_stop( 'unrecognised value for igrd in fld_map' )
          END SELECT
 
       IF ( ln_bdy ) & 

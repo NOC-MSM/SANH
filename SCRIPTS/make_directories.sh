@@ -1,9 +1,12 @@
-mkdir $SBC
-mkdir $TIDE
-mkdir $OBC
+mkdir $WDIR
 mkdir $RUND
 mkdir $EXP
-mkdir $DOMAIN
 mkdir $NEMO
+mkdir $XIOS
+mkdir $DOMAIN
 mkdir $ICS
-mkdir $ARCH1
+mkdir $OBC
+mkdir $TIDES
+mkdir $FORCING
+mkdir $RIVERS
+
