@@ -35,15 +35,17 @@ Large data files are stored on the Jasmin sci servers, found here:
 
 File Hierarchy 
 ==============
+Recommend the following file structure
 
-SANH
-|
-|__JASMIN_TRANSFER
-|__EXTRA_TOOLS
-|__MY_SRC
-|__SCRIPTS
-|
-|__README.md
-
+<pre>
+  SANH
+  |
+  |__JASMIN_TRANSFER
+  |__EXTRA_TOOLS
+  |__MY_SRC
+  |__SCRIPTS
+  |
+  |__README.md
+</pre>
 
  
