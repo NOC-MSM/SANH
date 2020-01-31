@@ -29,6 +29,21 @@ Getting started
 
 Large data files are stored on the Jasmin sci servers, found here: 
 
-/gws/nopw/j04/accord/SANH
+<pre>
+  /gws/nopw/j04/accord/SANH
+</pre>
+
+File Hierarchy 
+==============
+
+SANH
+|
+|__JASMIN_TRANSFER
+|__EXTRA_TOOLS
+|__MY_SRC
+|__SCRIPTS
+|
+|__README.md
+
 
  
