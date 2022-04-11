@@ -1,29 +1,38 @@
+#Compile NEMO on Archer2
+cd $WDIR 
+#################################################################
+#first get/download NEMO 
+#################################################################
+#get nemo (only use firts time you install. Comment out before compiling once nemo is installed)
+svn co http://forge.ipsl.jussieu.fr/nemo/svn/NEMO/branches/UKMO/NEMO_4.0.4_mirror NEMO_4.0.4 
+
+#######################################################################
+#load modules
+module swap craype-network-ofi craype-network-ucx
+module swap cray-mpich cray-mpich-ucx
+module load cray-hdf5-parallel/1.12.0.7
+module load cray-netcdf-hdf5parallel/4.7.4.7
+
+#compile nemo
+#################################################################
+# get arch 
+#ATTENTION modify the following file to have the correct path for xios
+cp /work/n01/shared/nemo/ARCH/arch-X86_ARCHER2-Cray.fcm $NEMO/arch/arch-X86_ARCHER2-Cray.fcm
+
 cd $NEMO
+# go to ext/FCM/lib/Fcm/Config.pm and change
+# FC_MODSEARCH => '',             # FC flag, specify "module" path
+#to
+#FC_MODSEARCH => '-J',           # FC flag, specify "module" path
+sed -i "s/FC_MODSEARCH => ''/FC_MODSEARCH => '-J'/g" ext/FCM/lib/Fcm/Config.pm
 
-svn co http://forge.ipsl.jussieu.fr/nemo/svn/trunk/NEMOGCM@8395 trunk_NEMOGCM_r8395
+cd $NEMO
+#make configuration first
+./makenemo -n $CONFIG -r AMM12  -m X86_ARCHER2-Cray -j 16
 
-cp $GFILE/ARCH/arch-XC_ARCHER_INTEL.fcm $CDIR/../ARCH/
-
-
-cd $CDIR
-
-#the below command will fail but its ok
-printf 'y\nn\nn\nn\nn\nn\nn\nn\n' | ./makenemo -n $CONFIG -m XC_ARCHER_INTEL -j 10
-
-#continue with...
-./makenemo -n $CONFIG -m XC_ARCHER_INTEL -j 10 clean
-
-#copy over files 
-
-cp $GFILE/f_files/* $CDIR/$CONFIG/MY_SRC/.
-cp $WORK/MY_SRC/* $CDIR/$CONFIG/MY_SRC/.
-cp $GFILE/cpp_SANH.fcm $CONFIG/cpp_$CONFIG.fcm
-
-
-#make nemo
-./makenemo -n $CONFIG -m XC_ARCHER_INTEL -j 10
-
-cp  $XIOS_DIR/bin/xios_server.exe $EXP/xios_server.exe
-cp $CDIR/$CONFIG/EXP00/* $EXP/
-
-cd $SCRIPTS
+#make configuration with updates included 
+cd $NEMO
+./makenemo -r $CONFIG -m X86_ARCHER2-Cray -j 16 clean
+./makenemo -r $CONFIG -m X86_ARCHER2-Cray -j 16
+#################################################################
+cd $WDIR
