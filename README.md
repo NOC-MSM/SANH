@@ -13,9 +13,8 @@ This repository contains the scripts and initialisation files to run NEMO for th
 * downloading and compiling NEMO 
 * downloading the reanalysis (CMEMS) and forcing (ERA5) data
 * installing PyNEMO
-* installing Sosie
 * setting up the SANH domain
-* creating the initial conditions (ICS), ocean boundary conditions (OBC), rivers and forcing data
+* creating the initial conditions (ICS), ocean boundary conditions (OBC) and forcing data
 * running NEMO for the SANH model domain 
 
 Getting started
